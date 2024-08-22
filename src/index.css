@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *,
+  ::before,
+  ::after {
+    @apply border-transparent dark:border-transparent;
+  }
+  @font-face {
+    font-family: 'Varela';
+    src: url("/fonts/VarelaRound-Regular.ttf");
+  }
+  @font-face {
+    font-family: 'Shantell';
+    src: url("/fonts/ShantellSans-Medium.ttf");
+  }
+  @font-face {
+    font-family: 'Cookie';
+    src: url("/fonts/Cookie-Regular.ttf");
+  }
+  @font-face {
+    font-family: 'Montserrat';
+    src: url("/fonts/Montserrat.ttf");
+  }
+  @font-face {
+    font-family: 'Inter';
+    src: url("/fonts/Inter.ttf");
+  }
+  /* button {
+    @apply focus:outline-none
+  } */
+}
+
+/* Dialog animation */
+
+@keyframes dialog-overlay-show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes dialog-overlay-hide {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes dialog-content-show {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes dialog-content-hide {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+}
+
+.home {
+  background: radial-gradient(circle 480px at 70% 20%, rgb(22, 123, 239), transparent),
+                radial-gradient(circle 480px at 30% 20%, rgb(125 211 252), transparent)
+    /* background: radial-gradient(circle 530px at 20% 33%, rgba(9, 123, 238,0.6), transparent),
+    radial-gradient(circle 530px at 50% 33%, rgb(97, 181, 241,0.7), transparent),
+    radial-gradient(circle 530px at 80% 33%, rgb(9, 123, 238, 0.6), transparent); */
+     /* background: radial-gradient(circle 530px at 20% 33%, #0c4a6e, transparent),
+    radial-gradient(circle 530px at 50% 33%, #61b5f1, transparent),
+    radial-gradient(circle 530px at 80% 33%, #0c4a6e, transparent); */
+    
+    
+                /* ,
+                radial-gradient(circle 450px at 80% 40%, rgb(207 250 254), transparent); */
+
+  /* background-repeat: no-repeat; */
+}
+
