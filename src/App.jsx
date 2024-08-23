@@ -278,7 +278,7 @@ const Features = () => {
         initial='offscreen'
         whileInView='onscreen'
         viewport={{ once: true, amount: 0.8 }}
-        variants={textFromBottomAnimationVariants}
+        variants={textFromLeftAnimationVariants}
       >
         See what you can do
       </motion.span>
@@ -295,7 +295,7 @@ const featureOptions = [
     title: 'Media',
     description:
       'Enhance your documents with media elements such as photos, videos, audios, high-res images and 3D! ',
-    url: [`/picture.png`],
+    url: [`/doc/picture.png`],
     className: 'w-4/5 self-center',
   },
   {
@@ -303,15 +303,16 @@ const featureOptions = [
     title: 'AI text generation',
     description:
       'Powerful suite of AI tools like summarization, translation and personalized queries to get better understanding from the text.',
-    url: [`/ai_text2.png`],
+    url: [`/doc/ai_text2.png`],
     // className: 'w-4/5 self-center'
   },
   {
     id: 3,
     title: 'AI image generation',
     // description: 'Create images using AI and add them to your documents ',
-    description: 'Put your innovative ideas into text commands and create images using the latest AI tools. ',
-    url: [`/ai_image1.png`, `/ai_image2.png`],
+    description:
+      'Put your innovative ideas into text commands and create images using the latest AI tools. ',
+    url: [`/doc/ai_image1.png`, `/doc/ai_image2.png`],
     className: 'h-60 self-center',
   },
   {
@@ -321,7 +322,7 @@ const featureOptions = [
     description:
       'Express your creative self with drawing tools and text editors. Make your documents more lively and fun to interact with.',
 
-    url: [`/annotations2.png`],
+    url: [`/doc/annotations2.png`],
   },
   {
     id: 5,
@@ -329,7 +330,7 @@ const featureOptions = [
     description:
       // 'Add your comments. You can even record your audio and use a whiteboard to comment! ',
       'Ask questions, chat with others and discuss your ideas right there. Even better, you can record your audio and use a whiteboard to comment!',
-    url: [`/comments-1.png`, `/comments-2.png`],
+    url: [`/doc/comments-1.png`, `/doc/comments-2.png`],
     className: 'h-56 self-center',
   },
 ]
@@ -391,19 +392,18 @@ const sampleOptions = [
   {
     id: 1,
     title: 'Slides',
-    description:
-      'Enrich your slides with media and engage in discussions',
-    url: [`/sample1.png`],
+    description: 'Enrich your slides with media and engage in discussions',
+    url: [`/doc/sample1.png`],
     // className: 'mt-20',
   },
   {
     id: 2,
     title: 'Assignments',
     description: 'Complete your assignments and get feedback',
-    url: [`/sample2.png`],
+    url: [`/doc/sample2.png`],
     // className: 'mt-14',
     // className: 'w-4/5 self-center'
-  }
+  },
 ]
 
 const Samples = () => {
@@ -416,7 +416,7 @@ const Samples = () => {
       className='flex flex-col gap-y-16 px-20'
     >
       <motion.span
-        className='font-inter text-5xl font-semibold text-center'
+        className='font-inter text-5xl font-semibold'
         initial='offscreen'
         whileInView='onscreen'
         viewport={{ once: true, amount: 0.8 }}
@@ -499,7 +499,7 @@ const Video = ({ setLoaded }) => {
   return (
     <MediaPlayer
       src={{
-        src: `/demo.mp4`,
+        src: `/doc/demo.mp4`,
         type: 'video/mp4',
       }}
       onLoadedData={() => setLoaded(true)}
