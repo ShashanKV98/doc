@@ -35,12 +35,12 @@
 
 html,body {
   height: 100%;
-  overflow-y: auto;
   touch-action: auto;
   user-select: auto;
 }
 #root {
-  overflow-y: auto;
+  height: 100%;
+  overflow: scroll;
   touch-action: auto;
   user-select: auto;
 }

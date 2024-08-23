@@ -32,7 +32,7 @@ import {
 
 function App() {
   return (
-    <div className='min-h-0 home touch-auto select-auto'>
+    <div className='flex flex-col gap-y-24 min-h-0 home touch-auto select-auto overflow-scroll'>
       <div className='py-4 flex justify-between self-center md:w-[80%] w-full gap-2 px-6 md:px-16'>
         <span className='font-inter text-lg md:text-2xl font-bold bg-clip-text text-transparent  inline-block bg-gradient-to-b from-cyan-400 to-blue-500'>
           Paradocs
