@@ -33,7 +33,7 @@ import {
 function App() {
   return (
     <>
-      <div className='flex flex-col gap-y-24 home'>
+      <div className='flex flex-col gap-y-24 home overflow-y-scroll'>
         <div className='py-4 flex justify-between self-center w-[80%] gap-2 px-16'>
           <span className='font-inter text-2xl font-bold bg-clip-text text-transparent  inline-block bg-gradient-to-b from-cyan-400 to-blue-500'>
             Paradocs
