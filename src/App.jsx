@@ -32,7 +32,7 @@ import {
 
 function App() {
   return (
-    <div className='flex flex-col gap-y-24 home h-full w-full'>
+    <div className='flex flex-col gap-y-24 home'>
       <div className='py-4 flex justify-between self-center md:w-[80%] w-full gap-2 px-6 md:px-16'>
         <span className='font-inter text-lg md:text-2xl font-bold bg-clip-text text-transparent  inline-block bg-gradient-to-b from-cyan-400 to-blue-500'>
           Paradocs
@@ -142,16 +142,18 @@ const AnimateEffect = () => {
             Platform to transform your documents
           </span> */}
       {/* </div> */}
-      <motion.div
-        className='md:w-[80%] w-full m-auto rounded-2xl bg-transparent'
-        initial='offscreen'
-        // animate={loaded ? 'onscreen' : 'offscreen'}
-        whileInView={loaded ? 'onscreen' : 'offscreen'}
-        viewport={{ once: true, amount: 0.2 }}
-        variants={videoAnimationVariants}
-      >
-        <Video setLoaded={setLoaded} />
-      </motion.div>
+      <div className='md:w-[80%] w-full m-auto rounded-2xl bg-slate-200/40'>
+        <motion.div
+          className='w-full m-auto rounded-2xl bg-transparent'
+          initial='offscreen'
+          // animate={loaded ? 'onscreen' : 'offscreen'}
+          whileInView={loaded ? 'onscreen' : 'offscreen'}
+          viewport={{ once: true, amount: 0.2 }}
+          variants={videoAnimationVariants}
+        >
+          <Video setLoaded={setLoaded} />
+        </motion.div>
+      </div>
     </motion.div>
   )
 }

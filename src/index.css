@@ -37,11 +37,12 @@ html,body {
   height: 100%;
   overflow-y: auto;
   touch-action: auto;
+  user-select: auto;
 }
-
 #root {
-  min-height: 100dvh;
-  width: 99dvw;
+  overflow-y: auto;
+  touch-action: auto;
+  user-select: auto;
 }
 /* Dialog animation */
 
@@ -85,31 +86,31 @@ html,body {
   }
 } */
 .home {
-  background: radial-gradient(circle 200px at 70% 60%, rgb(22, 123, 239), transparent),
-              radial-gradient(circle 200px at 30% 60%, rgb(125 211 252), transparent)
+  background: radial-gradient(circle 140px at 70% 13%, rgb(22, 123, 239), transparent),
+              radial-gradient(circle 140px at 30% 13%, rgb(125 211 252), transparent)
 }
 @media (min-width: 450px){
 .home {
-  background: radial-gradient(circle 320px at 70% 50%, rgb(22, 123, 239), transparent),
-                radial-gradient(circle 320px at 30% 50%, rgb(125 211 252), transparent)
+  background: radial-gradient(circle 320px at 70% 10%, rgb(22, 123, 239), transparent),
+                radial-gradient(circle 320px at 30% 10%, rgb(125 211 252), transparent)
 }
 }
 @media (min-width: 764px){
 .home {
-  background: radial-gradient(circle 320px at 70% 50%, rgb(22, 123, 239), transparent),
-                radial-gradient(circle 320px at 30% 50%, rgb(125 211 252), transparent)
+  background: radial-gradient(circle 320px at 70% 15%, rgb(22, 123, 239), transparent),
+                radial-gradient(circle 320px at 30% 15%, rgb(125 211 252), transparent)
 }
 }
 @media (min-width: 1024px){
 .home {
-  background: radial-gradient(circle 400px at 70% 60%, rgb(22, 123, 239), transparent),
-                radial-gradient(circle 400px at 30% 60%, rgb(125 211 252), transparent)
+  background: radial-gradient(circle 400px at 70% 15%, rgb(22, 123, 239), transparent),
+                radial-gradient(circle 400px at 30% 15%, rgb(125 211 252), transparent)
 }
 }
 @media (min-width: 1280px){
 .home {
-  background: radial-gradient(circle 700px at 70% 70%, rgb(22, 123, 239), transparent),
-                radial-gradient(circle 700px at 30% 70%, rgb(125 211 252), transparent)
+  background: radial-gradient(circle 500px at 70% 15%, rgb(22, 123, 239), transparent),
+                radial-gradient(circle 500px at 30% 15%, rgb(125 211 252), transparent)
     /* background: radial-gradient(circle 530px at 20% 33%, rgba(9, 123, 238,0.6), transparent),
     radial-gradient(circle 530px at 50% 33%, rgb(97, 181, 241,0.7), transparent),
     radial-gradient(circle 530px at 80% 33%, rgb(9, 123, 238, 0.6), transparent); */
