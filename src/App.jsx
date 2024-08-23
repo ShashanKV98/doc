@@ -417,7 +417,7 @@ const Samples = () => {
       // initial='offscreen'
       // whileInView='onscreen'
       // viewport={{ once: true, amount: 0.8 }}
-      className='flex flex-col gap-y-16 px-6 md:px-20'
+      className='flex flex-col gap-y-10 px-6 md:px-20'
     >
       <motion.span
         className='font-inter text-4xl md:text-5xl font-semibold'
