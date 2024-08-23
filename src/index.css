@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 @layer base {
-  /* *,
+  *,
   ::before,
   ::after {
     @apply border-transparent dark:border-transparent;
-  } */
+  }
   @font-face {
     font-family: 'Varela';
     src: url("/fonts/VarelaRound-Regular.ttf");
@@ -35,7 +35,7 @@
 
 /* Dialog animation */
 
-@keyframes dialog-overlay-show {
+/* @keyframes dialog-overlay-show {
   from {
     opacity: 0;
   }
@@ -73,11 +73,27 @@
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.9);
   }
-}
-
+} */
 .home {
-  background: radial-gradient(circle 480px at 70% 20%, rgb(22, 123, 239), transparent),
-                radial-gradient(circle 480px at 30% 20%, rgb(125 211 252), transparent)
+  background: radial-gradient(circle 240px at 70% 10%, rgb(22, 123, 239), transparent),
+              radial-gradient(circle 240px at 30% 10%, rgb(125 211 252), transparent)
+}
+@media (min-width: 764px){
+.home {
+  background: radial-gradient(circle 320px at 70% 15%, rgb(22, 123, 239), transparent),
+                radial-gradient(circle 320px at 30% 15%, rgb(125 211 252), transparent)
+}
+}
+@media (min-width: 1024px){
+.home {
+  background: radial-gradient(circle 400px at 70% 15%, rgb(22, 123, 239), transparent),
+                radial-gradient(circle 400px at 30% 15%, rgb(125 211 252), transparent)
+}
+}
+@media (min-width: 1280px){
+.home {
+  background: radial-gradient(circle 500px at 70% 15%, rgb(22, 123, 239), transparent),
+                radial-gradient(circle 500px at 30% 15%, rgb(125 211 252), transparent)
     /* background: radial-gradient(circle 530px at 20% 33%, rgba(9, 123, 238,0.6), transparent),
     radial-gradient(circle 530px at 50% 33%, rgb(97, 181, 241,0.7), transparent),
     radial-gradient(circle 530px at 80% 33%, rgb(9, 123, 238, 0.6), transparent); */
@@ -90,5 +106,6 @@
                 radial-gradient(circle 450px at 80% 40%, rgb(207 250 254), transparent); */
 
   /* background-repeat: no-repeat; */
+}
 }
 
