@@ -458,7 +458,7 @@ const SampleStack = () => {
           // }}
         >
           <div className='relative flex flex-col gap-y-4  justify-center'>
-            <span className='font-inter font-semibold text-xl sm:text-2xl md:text-4xl relative'>
+            <span className='font-inter font-semibold text-xl sm:text-2xl relative'>
               {title}
             </span>
             <span className='font-inter text-lg font-semibold opacity-60'>
