@@ -46,6 +46,7 @@ function App() {
         />
         <div className='bg-neutral-100 pt-10 pb-10 flex flex-col gap-y-16'>
           <Features />
+          <Samples/>
           <LastSection />
         </div>
       </div>
@@ -176,6 +177,22 @@ const textFromLeftAnimationVariants = {
   },
 }
 
+const textFromBottomAnimationVariants = {
+  offscreen: {
+    y: -50,
+    opacity: 0,
+  },
+  onscreen: {
+    y: 0,
+    opacity: 1,
+    // rotate: -10,
+    transition: {
+      type: 'tween',
+      duration: 0.3,
+    },
+  },
+}
+
 const featureAnimationVariants = {
   offscreen: {
     y: 80,
@@ -261,7 +278,7 @@ const Features = () => {
         initial='offscreen'
         whileInView='onscreen'
         viewport={{ once: true, amount: 0.8 }}
-        variants={textFromLeftAnimationVariants}
+        variants={textFromBottomAnimationVariants}
       >
         See what you can do
       </motion.span>
@@ -369,6 +386,94 @@ const CardStack = () => {
   )
 }
 
+
+const sampleOptions = [
+  {
+    id: 1,
+    title: 'Slides',
+    description:
+      'Enrich your slides with media and engage in discussions',
+    url: [`/sample1.png`],
+    // className: 'mt-20',
+  },
+  {
+    id: 2,
+    title: 'Assignments',
+    description: 'Complete your assignments and get feedback',
+    url: [`/sample2.png`],
+    // className: 'mt-14',
+    // className: 'w-4/5 self-center'
+  }
+]
+
+const Samples = () => {
+  return (
+    <motion.div
+      // ref={scope}
+      // initial='offscreen'
+      // whileInView='onscreen'
+      // viewport={{ once: true, amount: 0.8 }}
+      className='flex flex-col gap-y-16 px-20'
+    >
+      <motion.span
+        className='font-inter text-5xl font-semibold text-center'
+        initial='offscreen'
+        whileInView='onscreen'
+        viewport={{ once: true, amount: 0.8 }}
+        variants={textFromLeftAnimationVariants}
+      >
+        Samples
+      </motion.span>
+      <SampleStack />
+    </motion.div>
+  )
+}
+
+// Carousel for more items (2 at a time)
+
+const SampleStack = () => {
+  return (
+    <div className='grid grid-cols-2 gap-x-20'>
+      {sampleOptions.map(({ id, title, description, url, className }, idx) => (
+        <motion.div
+          initial='offscreen'
+          whileInView='onscreen'
+          viewport={{ once: true, amount: 0.3 }}
+          variants={featureAnimationVariants}
+          key={id}
+          // style={{
+          //   backgroundImage: `url(${url})`,
+          // }}
+          className={clsx(
+            ' hover:bg-slate-200/80 rounded-3xl p-10 transition-colors duration-200 flex flex-col space-y-12'
+          )}
+          // whileHover={{
+          //   scale: 1.03,
+          //   transition: {
+          //     duration: 0.3,
+          //   },
+          // }}
+        >
+          
+          <div className='relative flex flex-col gap-y-4  justify-center'>
+            <span className='font-inter font-semibold text-xl relative'>
+              {title}
+            </span>
+            <span className='font-inter text-lg font-semibold opacity-60'>
+              {description}
+            </span>
+          </div>
+            <img
+              src={url}
+              className={clsx(' w-full h-auto', className)}
+            />
+        </motion.div>
+      ))}
+    </div>
+  )
+}
+
+
 const LastSection = () => {
   return (
     <div className='flex flex-col items-center gap-y-10 w-full m-auto bg-slate-950 py-20 transition-all duration-200'>
@@ -394,7 +499,7 @@ const Video = ({ setLoaded }) => {
   return (
     <MediaPlayer
       src={{
-        src: `/resolved_demo.mp4`,
+        src: `/demo.mp4`,
         type: 'video/mp4',
       }}
       onLoadedData={() => setLoaded(true)}
