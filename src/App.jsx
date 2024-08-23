@@ -32,23 +32,20 @@ import {
 
 function App() {
   return (
-      <div className='flex flex-col gap-y-24 home h-full w-full'>
-        <div className='py-4 flex justify-between self-center w-[80%] gap-2 px-16'>
-          <span className='font-inter text-lg md:text-2xl font-bold bg-clip-text text-transparent  inline-block bg-gradient-to-b from-cyan-400 to-blue-500'>
-            Paradocs
-          </span>
-        </div>
-
-        <AnimateEffect
-          duration={1}
-          filter={false}
-        />
-        <div className='bg-neutral-100 pt-10 pb-10 flex flex-col gap-y-16'>
-          <Features />
-          <Samples/>
-          <LastSection />
-        </div>
+    <div className='flex flex-col gap-y-24 home h-full w-full'>
+      <div className='py-4 flex justify-between self-center md:w-[80%] w-full gap-2 px-6 md:px-16'>
+        <span className='font-inter text-lg md:text-2xl font-bold bg-clip-text text-transparent  inline-block bg-gradient-to-b from-cyan-400 to-blue-500'>
+          Paradocs
+        </span>
       </div>
+
+      <AnimateEffect duration={1} filter={false} />
+      <div className='bg-neutral-100 pt-10 pb-10 flex flex-col gap-y-16'>
+        <Features />
+        <Samples />
+        <LastSection />
+      </div>
+    </div>
   )
 }
 
@@ -79,7 +76,7 @@ const AnimateEffect = () => {
       // initial='offscreen'
       // whileInView='onscreen'
       // viewport={{ once: true, amount: 0.8 }}
-      className='opacity-100 flex flex-col gap-y-24 px-20'
+      className='opacity-100 flex flex-col gap-y-24 px-6 md:px-20'
       // style={{
       //   filter: filter ? 'blur(10px)' : 'none',
       //   y: 20,
@@ -146,7 +143,7 @@ const AnimateEffect = () => {
           </span> */}
       {/* </div> */}
       <motion.div
-        className='w-[80%] m-auto rounded-2xl bg-transparent'
+        className='md:w-[80%] w-full m-auto rounded-2xl bg-transparent'
         initial='offscreen'
         // animate={loaded ? 'onscreen' : 'offscreen'}
         whileInView={loaded ? 'onscreen' : 'offscreen'}
@@ -265,7 +262,7 @@ const Features = () => {
       // initial='offscreen'
       // whileInView='onscreen'
       // viewport={{ once: true, amount: 0.8 }}
-      className='flex flex-col gap-y-16 px-6 md:px-20'
+      className='flex flex-col gap-y-10 md:gap-y-16 px-6 md:px-20'
     >
       <motion.span
         className='font-inter text-4xl md:text-5xl font-semibold'
@@ -481,9 +478,7 @@ const SampleStack = () => {
 const LastSection = () => {
   return (
     <div className='flex flex-col items-center gap-y-10 w-full m-auto bg-slate-950 py-20 transition-all duration-200'>
-      <motion.span
-        className='font-inter text-5xl text-slate-100 font-semibold'
-      >
+      <motion.span className='font-inter text-3xl sm:text-5xl text-slate-100 font-semibold'>
         {/* Get started with Paradocs */}
         Coming soon
       </motion.span>

@@ -75,8 +75,14 @@
   }
 } */
 .home {
-  background: radial-gradient(circle 240px at 70% 10%, rgb(22, 123, 239), transparent),
-              radial-gradient(circle 240px at 30% 10%, rgb(125 211 252), transparent)
+  background: radial-gradient(circle 140px at 70% 13%, rgb(22, 123, 239), transparent),
+              radial-gradient(circle 140px at 30% 13%, rgb(125 211 252), transparent)
+}
+@media (min-width: 450px){
+.home {
+  background: radial-gradient(circle 320px at 70% 10%, rgb(22, 123, 239), transparent),
+                radial-gradient(circle 320px at 30% 10%, rgb(125 211 252), transparent)
+}
 }
 @media (min-width: 764px){
 .home {
