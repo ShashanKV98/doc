@@ -2,20 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
 @layer base {
-  *,
+  /* *,
   ::before,
   ::after {
     @apply border-transparent dark:border-transparent;
-  }
+  } */
   @font-face {
     font-family: 'Varela';
     src: url("/fonts/VarelaRound-Regular.ttf");

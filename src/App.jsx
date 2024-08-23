@@ -33,7 +33,7 @@ import {
 function App() {
   return (
     <>
-      <div className='flex flex-col gap-y-24 home overflow-y-scroll'>
+      <div className='flex flex-col gap-y-24 home'>
         <div className='py-4 flex justify-between self-center w-[80%] gap-2 px-16'>
           <span className='font-inter text-2xl font-bold bg-clip-text text-transparent  inline-block bg-gradient-to-b from-cyan-400 to-blue-500'>
             Paradocs
@@ -76,7 +76,7 @@ const AnimateEffect = () => {
   //   if (isInView) handleAnimate()
   // }, [isInView, scope.current])
   return (
-    <motion.div
+    <div
       // ref={scope}
       // initial='offscreen'
       // whileInView='onscreen'
@@ -87,13 +87,13 @@ const AnimateEffect = () => {
       //   y: 20,
       // }}
     >
-      <motion.div
+      <div
         // ref={scope}
         // className='relative opacity-0 flex flex-col gap-y-10 m-auto'
         className='relative flex flex-col gap-y-10 m-auto'
       >
         <div className='flex flex-col gap-y-3 w-full items-center'>
-          <motion.span
+          <span
             className='font-inter text-[62px] font-bold'
             // className='opacity-0'
             // style={{
@@ -102,15 +102,15 @@ const AnimateEffect = () => {
             // }}
           >
             Go{' '}
-            <motion.span className='font-inter text-[62px] font-bold bg-clip-text text-transparent  inline-block bg-gradient-to-b from-cyan-400 to-blue-500'>
+            <span className='font-inter text-[62px] font-bold bg-clip-text text-transparent  inline-block bg-gradient-to-b from-cyan-400 to-blue-500'>
               {' '}
               beyond{' '}
-            </motion.span>{' '}
+            </span>{' '}
             just reading
-          </motion.span>
+          </span>
           {/* {words.split(' ').map((word, idx) => {
             return (
-              <motion.span
+              <span
                 key={word + idx}
                 className='opacity-0'
                 style={{
@@ -119,7 +119,7 @@ const AnimateEffect = () => {
               >
                 {word}
                 {'  '}
-              </motion.span>
+              </span>
             )
           })} */}
           <div className='flex flex-col'>
@@ -141,23 +141,23 @@ const AnimateEffect = () => {
             </span>
           </div>
         </div>
-      </motion.div>
+      </div>
       {/* <div className='m-auto flex flex-col gap-y-3 justify-center'> */}
       {/* <span className='font-inter text-lg text-center opacity/80'>
             Platform to transform your documents
           </span> */}
       {/* </div> */}
-      <motion.div
+      <div
         className='w-[80%] m-auto rounded-2xl bg-transparent'
-        initial='offscreen'
-        // animate={loaded ? 'onscreen' : 'offscreen'}
-        whileInView={loaded ? 'onscreen' : 'offscreen'}
-        viewport={{ once: true, amount: 0.2 }}
-        variants={videoAnimationVariants}
+        // initial='offscreen'
+        // // animate={loaded ? 'onscreen' : 'offscreen'}
+        // whileInView={loaded ? 'onscreen' : 'offscreen'}
+        // viewport={{ once: true, amount: 0.2 }}
+        // variants={videoAnimationVariants}
       >
         <Video setLoaded={setLoaded} />
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   )
 }
 
@@ -262,29 +262,29 @@ const Features = () => {
   //   if (isInView) handleAnimate()
   // }, [isInView, scope.current])
   return (
-    <motion.div
+    <div
       // ref={scope}
       // initial='offscreen'
       // whileInView='onscreen'
       // viewport={{ once: true, amount: 0.8 }}
       className='flex flex-col gap-y-16 px-20'
     >
-      <motion.span
+      <span
         className='font-inter text-5xl font-semibold'
         // style={{
         //   filter: 'none',
         //   y: 20,
         // }}
-        initial='offscreen'
-        whileInView='onscreen'
-        viewport={{ once: true, amount: 0.8 }}
-        variants={textFromLeftAnimationVariants}
+        // initial='offscreen'
+        // whileInView='onscreen'
+        // viewport={{ once: true, amount: 0.8 }}
+        // variants={textFromLeftAnimationVariants}
       >
         See what you can do
-      </motion.span>
+      </span>
       {/* <CardCarousel/> */}
       <CardStack />
-    </motion.div>
+    </div>
   )
 }
 
@@ -338,11 +338,11 @@ const CardStack = () => {
   return (
     <div className='flex flex-col w-full gap-y-8'>
       {featureOptions.map(({ id, title, description, url, className }, idx) => (
-        <motion.div
-          initial='offscreen'
-          whileInView='onscreen'
-          viewport={{ once: true, amount: 0.3 }}
-          variants={featureAnimationVariants}
+        <div
+          // initial='offscreen'
+          // whileInView='onscreen'
+          // viewport={{ once: true, amount: 0.3 }}
+          // variants={featureAnimationVariants}
           key={id}
           className={clsx(
             'h-full flex gap-x-16 justify-start hover:bg-slate-200/80 rounded-3xl p-6 transition-colors duration-200',
@@ -381,7 +381,7 @@ const CardStack = () => {
               />
             ))}
           </div>
-        </motion.div>
+        </div>
       ))}
     </div>
   )
@@ -408,24 +408,24 @@ const sampleOptions = [
 
 const Samples = () => {
   return (
-    <motion.div
+    <div
       // ref={scope}
       // initial='offscreen'
       // whileInView='onscreen'
       // viewport={{ once: true, amount: 0.8 }}
       className='flex flex-col gap-y-16 px-20'
     >
-      <motion.span
+      <span
         className='font-inter text-5xl font-semibold'
-        initial='offscreen'
-        whileInView='onscreen'
-        viewport={{ once: true, amount: 0.8 }}
-        variants={textFromLeftAnimationVariants}
+        // initial='offscreen'
+        // whileInView='onscreen'
+        // viewport={{ once: true, amount: 0.8 }}
+        // variants={textFromLeftAnimationVariants}
       >
         Samples
-      </motion.span>
+      </span>
       <SampleStack />
-    </motion.div>
+    </div>
   )
 }
 
@@ -435,11 +435,11 @@ const SampleStack = () => {
   return (
     <div className='grid grid-cols-2 gap-x-20'>
       {sampleOptions.map(({ id, title, description, url, className }, idx) => (
-        <motion.div
-          initial='offscreen'
-          whileInView='onscreen'
-          viewport={{ once: true, amount: 0.3 }}
-          variants={featureAnimationVariants}
+        <div
+          // initial='offscreen'
+          // whileInView='onscreen'
+          // viewport={{ once: true, amount: 0.3 }}
+          // variants={featureAnimationVariants}
           key={id}
           // style={{
           //   backgroundImage: `url(${url})`,
@@ -467,7 +467,7 @@ const SampleStack = () => {
               src={url}
               className={clsx(' w-full h-auto', className)}
             />
-        </motion.div>
+        </div>
       ))}
     </div>
   )
@@ -477,20 +477,20 @@ const SampleStack = () => {
 const LastSection = () => {
   return (
     <div className='flex flex-col items-center gap-y-10 w-full m-auto bg-slate-950 py-20 transition-all duration-200'>
-      <motion.span
+      <span
         className='font-inter text-5xl text-slate-100 font-semibold'
       >
         {/* Get started with Paradocs */}
         Coming soon
-      </motion.span>
-      <motion.div>
+      </span>
+      <div>
         {/* <Link
           to='/doc'
           className='w-28 m-auto flex justify-center text-white text-base font-inter py-2.5 transition-all duration-200 bg-blue-600 hover:bg-blue-500 rounded-full'
         >
           Try now
         </Link> */}
-      </motion.div>
+      </div>
     </div>
   )
 }
