@@ -32,7 +32,7 @@ import {
 
 function App() {
   return (
-    <div className='flex flex-col gap-y-24 min-h-0 home touch-auto select-auto overflow-scroll'>
+    <div className='flex flex-col gap-y-24 min-h-0 home touch-auto'>
       <div className='py-4 flex justify-between self-center md:w-[80%] w-full gap-2 px-6 md:px-16'>
         <span className='font-inter text-lg md:text-2xl font-bold bg-clip-text text-transparent  inline-block bg-gradient-to-b from-cyan-400 to-blue-500'>
           Paradocs
@@ -89,7 +89,7 @@ const AnimateEffect = () => {
       >
         <div className='flex flex-col gap-y-3 w-full items-center'>
           <span
-            className='font-inter text-[36px] md:text-[48px] lg:text-[62px] font-bold'
+            className='font-inter text-[24px] sm:text-[32px] md:text-[48px] lg:text-[62px] font-bold'
             // className='opacity-0'
             // style={{
             //   filter: filter ? 'blur(10px)' : 'none',
@@ -122,7 +122,7 @@ const AnimateEffect = () => {
               // style={{
               //   wordSpacing: 20
               // }}
-              className='font-inter font-semibold text-lg md:text-xl text-center text-black/80 tracking-normal '
+              className='font-inter font-semibold text-md sm:text-lg md:text-xl text-center text-black/80 tracking-normal '
               // className='opacity-0'
               // style={{
               //   filter: filter ? 'blur(10px)' : 'none',
@@ -131,7 +131,7 @@ const AnimateEffect = () => {
               {/* Platform to transform your documents */}
               Create, Enhance, Discuss and much more.{'  '}
             </span>
-            <span className='font-inter font-semibold text-lg md:text-xl text-center text-black/60 tracking-normal indent-6'>
+            <span className='font-inter font-semibold text-md sm:text-lg md:text-xl text-center text-black/60 tracking-normal indent-6'>
               Turn static documents into an interactive experience.
             </span>
           </div>
@@ -267,7 +267,7 @@ const Features = () => {
       className='flex flex-col gap-y-10 md:gap-y-16 px-6 md:px-20'
     >
       <motion.span
-        className='font-inter text-4xl md:text-5xl font-semibold'
+        className='font-inter text-3xl sm:text-4xl md:text-5xl font-semibold'
         // style={{
         //   filter: 'none',
         //   y: 20,
@@ -360,7 +360,7 @@ const CardStack = () => {
           // }}
         >
           <div className='relative flex flex-col gap-y-4 w-full md:w-1/2 justify-center'>
-            <span className='font-inter font-semibold text-2xl md:text-4xl relative'>
+            <span className='font-inter font-semibold text-xl sm:text-2xl md:text-4xl relative'>
               {title}
             </span>
             <span className='font-inter text-md md:text-lg font-semibold opacity-60'>
@@ -419,7 +419,7 @@ const Samples = () => {
       className='flex flex-col gap-y-10 px-6 md:px-20'
     >
       <motion.span
-        className='font-inter text-4xl md:text-5xl font-semibold'
+        className='font-inter text-3xl sm:text-4xl md:text-5xl  font-semibold'
         initial='offscreen'
         whileInView='onscreen'
         viewport={{ once: true, amount: 0.8 }}
@@ -457,19 +457,15 @@ const SampleStack = () => {
           //   },
           // }}
         >
-          
           <div className='relative flex flex-col gap-y-4  justify-center'>
-            <span className='font-inter font-semibold text-2xl relative'>
+            <span className='font-inter font-semibold text-xl sm:text-2xl md:text-4xl relative'>
               {title}
             </span>
             <span className='font-inter text-lg font-semibold opacity-60'>
               {description}
             </span>
           </div>
-            <img
-              src={url}
-              className={clsx(' w-full h-auto', className)}
-            />
+          <img src={url} className={clsx(' w-full h-auto', className)} />
         </motion.div>
       ))}
     </div>

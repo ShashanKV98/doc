@@ -33,14 +33,9 @@
   } */
 }
 
-html,body {
-  height: 100%;
-  touch-action: auto;
-  user-select: auto;
-}
 #root {
   height: 100%;
-  overflow: scroll;
+  /* width: ; */
   touch-action: auto;
   user-select: auto;
 }
@@ -86,8 +81,8 @@ html,body {
   }
 } */
 .home {
-  background: radial-gradient(circle 140px at 70% 13%, rgb(22, 123, 239), transparent),
-              radial-gradient(circle 140px at 30% 13%, rgb(125 211 252), transparent)
+  background: radial-gradient(circle 240px at 70% 13%, rgb(22, 123, 239), transparent),
+              radial-gradient(circle 240px at 30% 13%, rgb(125 211 252), transparent)
 }
 @media (min-width: 450px){
 .home {
