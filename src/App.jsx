@@ -32,7 +32,7 @@ import {
 
 function App() {
   return (
-    <div className='flex flex-col gap-y-24 home'>
+    <div className='min-h-0 home touch-auto select-auto'>
       <div className='py-4 flex justify-between self-center md:w-[80%] w-full gap-2 px-6 md:px-16'>
         <span className='font-inter text-lg md:text-2xl font-bold bg-clip-text text-transparent  inline-block bg-gradient-to-b from-cyan-400 to-blue-500'>
           Paradocs
@@ -71,24 +71,24 @@ const AnimateEffect = () => {
   //   if (isInView) handleAnimate()
   // }, [isInView, scope.current])
   return (
-    <motion.div
+    <div
       // ref={scope}
       // initial='offscreen'
       // whileInView='onscreen'
       // viewport={{ once: true, amount: 0.8 }}
-      className='opacity-100 flex flex-col gap-y-24 px-6 md:px-20'
+      className='flex flex-col gap-y-24 touch-auto select-auto px-6 md:px-20'
       // style={{
       //   filter: filter ? 'blur(10px)' : 'none',
       //   y: 20,
       // }}
     >
-      <motion.div
+      <div
         // ref={scope}
         // className='relative opacity-0 flex flex-col gap-y-10 m-auto'
-        className='relative flex flex-col gap-y-10 m-auto'
+        className='relative flex flex-col gap-y-10 m-auto touch-auto select-auto'
       >
         <div className='flex flex-col gap-y-3 w-full items-center'>
-          <motion.span
+          <span
             className='font-inter text-[36px] md:text-[48px] lg:text-[62px] font-bold'
             // className='opacity-0'
             // style={{
@@ -102,7 +102,7 @@ const AnimateEffect = () => {
               beyond{' '}
             </motion.span>{' '}
             just reading
-          </motion.span>
+          </span>
           {/* {words.split(' ').map((word, idx) => {
             return (
               <motion.span
@@ -136,13 +136,13 @@ const AnimateEffect = () => {
             </span>
           </div>
         </div>
-      </motion.div>
+      </div>
       {/* <div className='m-auto flex flex-col gap-y-3 justify-center'> */}
       {/* <span className='font-inter text-lg text-center opacity/80'>
             Platform to transform your documents
           </span> */}
       {/* </div> */}
-      <div className='md:w-[80%] w-full m-auto rounded-2xl bg-slate-200/40'>
+      <div className='md:w-[80%] w-full m-auto rounded-2xl bg-slate-200/40 touch-auto select-auto'>
         <motion.div
           className='w-full m-auto rounded-2xl bg-transparent'
           initial='offscreen'
@@ -154,7 +154,7 @@ const AnimateEffect = () => {
           <Video setLoaded={setLoaded} />
         </motion.div>
       </div>
-    </motion.div>
+    </div>
   )
 }
 
