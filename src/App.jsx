@@ -13,10 +13,12 @@ import {
 } from '@heroicons/react/24/outline'
 import '@vidstack/react/player/styles/base.css'
 import * as Tooltip from '@radix-ui/react-tooltip'
-import * as Slider from '@radix-ui/react-slider'
+// import * as Slider from '@radix-ui/react-slider'
 import {
   // useMediaStore,
   // useSliderStore,
+  TimeSlider,
+  Time,
   useSliderPreview,
   MediaPlayer,
   MediaProvider,
@@ -33,12 +35,14 @@ import {
 function App() {
   return (
     <div className='flex flex-col gap-y-24 min-h-0 home touch-auto'>
-      <div className='py-4 flex justify-between self-center md:w-[80%] w-full gap-2 px-6 md:px-16'>
-        <span className='font-inter text-lg md:text-2xl font-bold bg-clip-text text-transparent  inline-block bg-gradient-to-b from-cyan-400 to-blue-500'>
+      <div className='py-2 flex justify-between self-center md:w-[80%] w-full gap-2 px-6 md:px-16'>
+        <span className='font-inter mt-2.5 text-xl font-bold bg-clip-text text-transparent  inline-block bg-gradient-to-b from-cyan-400 to-blue-500'>
           Paradocs
         </span>
+        <button className='w-36 py-3.5 text-base font-inter transition-all bg-gradient-to-r from-sky-500 to-blue-500 hover:bg-gradient-to-r hover:from-sky-400 hover:to-blue-400 duration-200  rounded-full text-white'>
+          Try demo
+        </button>
       </div>
-
       <AnimateEffect duration={1} filter={false} />
       <div className='bg-neutral-100 pt-10 pb-10 flex flex-col gap-y-16'>
         <Features />
@@ -76,7 +80,7 @@ const AnimateEffect = () => {
       // initial='offscreen'
       // whileInView='onscreen'
       // viewport={{ once: true, amount: 0.8 }}
-      className='flex flex-col gap-y-24 touch-auto select-auto px-6 md:px-20'
+      className='flex flex-col gap-y-12 px-6 md:px-20'
       // style={{
       //   filter: filter ? 'blur(10px)' : 'none',
       //   y: 20,
@@ -89,7 +93,7 @@ const AnimateEffect = () => {
       >
         <div className='flex flex-col gap-y-3 w-full items-center'>
           <span
-            className='font-inter text-[24px] sm:text-[32px] md:text-[48px] lg:text-[62px] font-bold'
+            className='font-inter text-[28px] sm:text-[32px] md:text-[48px] lg:text-[62px] font-bold'
             // className='opacity-0'
             // style={{
             //   filter: filter ? 'blur(10px)' : 'none',
@@ -131,10 +135,13 @@ const AnimateEffect = () => {
               {/* Platform to transform your documents */}
               Create, Enhance, Discuss and much more.{'  '}
             </span>
-            <span className='font-inter font-semibold text-md sm:text-lg md:text-xl text-center text-black/60 tracking-normal indent-6'>
+            <span className='font-inter font-semibold text-md sm:text-lg md:text-xl text-center text-black/80 tracking-normal indent-6'>
               Turn static documents into an interactive experience.
             </span>
           </div>
+          <button className='w-36 mt-6 text-base font-inter py-3.5 transition-all bg-gradient-to-r from-sky-500 to-blue-500 hover:bg-gradient-to-r hover:from-sky-400 hover:to-blue-400 duration-200 rounded-full text-white'>
+            Try demo
+          </button>
         </div>
       </div>
       {/* <div className='m-auto flex flex-col gap-y-3 justify-center'> */}
@@ -292,7 +299,8 @@ const featureOptions = [
     title: 'Media',
     description:
       'Enhance your documents with media elements such as photos, videos, audios, high-res images and 3D! ',
-    url: [`/doc/picture.png`],
+    // url: [`/doc/picture.png`],
+    url: [`/picture.png`],
     className: 'w-full md:w-full lg:w-4/5 self-center',
   },
   {
@@ -300,7 +308,9 @@ const featureOptions = [
     title: 'AI text generation',
     description:
       'Powerful suite of AI tools like summarization, translation and personalized queries to get better understanding from the text.',
-    url: [`/doc/ai_text2.png`],
+    // url: [`/doc/ai_text2.png`],
+    url: [`/ai_text2.png`],
+
     // className: 'w-4/5 self-center'
   },
   {
@@ -308,8 +318,10 @@ const featureOptions = [
     title: 'AI image generation',
     // description: 'Create images using AI and add them to your documents ',
     description:
-      'Put your innovative ideas into text commands and create images using the latest AI tools. ',
-    url: [`/doc/ai_image2.png`,`/doc/ai_image1.png`],
+      'Put your innovative ideas into text commands and create images using the latest AI tools.  ',
+    // url: [`/doc/ai_image2.png`, `/doc/ai_image1.png`],
+    url: [`/ai_image2.png`, `/ai_image1.png`],
+
     className: 'w-1/2 self-center',
   },
   {
@@ -319,7 +331,8 @@ const featureOptions = [
     description:
       'Express your creative self with drawing tools and text editors. Make your documents more lively and fun to interact with.',
 
-    url: [`/doc/annotations2.png`],
+    // url: [`/doc/annotations2.png`],
+    url: [`/annotations2.png`],
   },
   {
     id: 5,
@@ -327,7 +340,8 @@ const featureOptions = [
     description:
       // 'Add your comments. You can even record your audio and use a whiteboard to comment! ',
       'Ask questions, chat with others and discuss your ideas right there. Even better, you can record your audio and use a whiteboard to comment!',
-    url: [`/doc/comments-1.png`, `/doc/comments-2.png`],
+    // url: [`/doc/comments-1.png`, `/doc/comments-2.png`],
+    url: [`/comments-1.png`, `/comments-2.png`],
     className: 'w-1/2 self-center',
   },
 ]
@@ -396,14 +410,18 @@ const sampleOptions = [
     id: 1,
     title: 'Slides',
     description: 'Enrich your slides with media and engage in discussions',
-    url: [`/doc/sample1.png`],
+    // url: [`/doc/sample1.png`],
+    url: [`/sample1.png`],
+
     // className: 'mt-20',
   },
   {
     id: 2,
     title: 'Assignments',
     description: 'Complete your assignments and get feedback',
-    url: [`/doc/sample2.png`],
+    // url: [`/doc/sample2.png`],
+    url: [`/sample2.png`],
+
     // className: 'mt-14',
     // className: 'w-4/5 self-center'
   },
@@ -475,12 +493,15 @@ const SampleStack = () => {
 
 const LastSection = () => {
   return (
-    <div className='flex flex-col items-center gap-y-10 w-full m-auto bg-slate-950 py-20 transition-all duration-200'>
+    <div className='flex flex-col items-center gap-y-10 w-full m-auto bg-slate-950 py-16 transition-all duration-200'>
       <motion.span className='font-inter text-3xl sm:text-5xl text-slate-100 font-semibold'>
         {/* Get started with Paradocs */}
         Coming soon
       </motion.span>
       <motion.div>
+        <button className='w-36 text-base font-inter py-3.5 transition-all bg-gradient-to-r from-sky-600 to-blue-600 hover:bg-gradient-to-r hover:from-sky-500 hover:to-blue-500 duration-200  rounded-full text-white'>
+          Try demo
+        </button>
         {/* <Link
           to='/doc'
           className='w-28 m-auto flex justify-center text-white text-base font-inter py-2.5 transition-all duration-200 bg-blue-600 hover:bg-blue-500 rounded-full'
@@ -497,7 +518,8 @@ const Video = ({ setLoaded }) => {
     // <video src={`/doc/demo.mp4`} />
     <MediaPlayer
       src={{
-        src: `/doc/demo.mp4`,
+        // src: `/doc/demo.mp4`,
+        src: `/demo.mp4`,
         type: 'video/mp4',
       }}
       onLoadedData={() => setLoaded(true)}
@@ -505,7 +527,7 @@ const Video = ({ setLoaded }) => {
       //   width: '80%',
       //   margin: 'auto'
       // }}
-      className=' h-auto rounded-2xl'
+      className='relative w-full rounded-2xl'
     >
       <PlayerControls />
     </MediaPlayer>
@@ -517,24 +539,61 @@ const PlayerControls = () => {
   return (
     <>
       <MediaProvider className='w-full h-full' />
-      <Controls.Root className='media-controls:opacity-100  absolute flex flex-row z-0 p-2 bottom-0 w-full h-full opacity-0'>
+      <Controls.Root className='media-controls:opacity-100 absolute w-full h-full opacity-0'>
         <Tooltip.Provider>
-          <Controls.Group className='w-full h-full flex flex-col-reverse justify-between '>
-            <PlayButton className='absolute border-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hover:cursor-pointer rounded-full bg-gradient-to-b from-slate-950/40 to-slate-700/40 p-6'>
-              {isPaused ? (
-                <PlayIcon className='size-8 stroke-2 stroke-slate-100 fill-slate-100' />
-              ) : (
-                <PauseIcon className='size-8 stroke-[3px] stroke-slate-100 fill-slate-100' />
-              )}
-            </PlayButton>
-            {/* <div className='absolute w-full'> */}
-              <CustomSlider />
-            {/* </div> */}
-          </Controls.Group>
+          {/* <Controls.Group className='w-full h-full flex flex-col-reverse justify-between '> */}
+          <PlayButton className='absolute border-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hover:cursor-pointer rounded-full bg-gradient-to-b from-slate-950/40 to-slate-700/40 p-6'>
+            {isPaused ? (
+              <PlayIcon className='size-8 stroke-2 stroke-slate-100 fill-slate-100' />
+            ) : (
+              <PauseIcon className='size-8 stroke-[3px] stroke-slate-100 fill-slate-100' />
+            )}
+          </PlayButton>
+          {/* <div className='absolute w-full'> */}
+          {/* </div> */}
+          {/* </Controls.Group> */}
         </Tooltip.Provider>
+        {/* <CustomSlider /> */}
+        <VideoSlider/>
+
       </Controls.Root>
       <Gestures />
     </>
+  )
+}
+
+function VideoSlider() {
+  const time = useMediaState('currentTime'),
+    canSeek = useMediaState('canSeek'),
+    duration = useMediaState('duration'),
+    seeking = useMediaState('seeking'),
+    remote = useMediaRemote(),
+    step = (1 / duration) * 100,
+    [value, setValue] = useState(0),
+    { previewRootRef, previewRef, previewValue } = useSliderPreview({
+      clamp: true,
+      offset: 6,
+      orientation: 'horizontal',
+    }),
+    previewTime = (previewValue / 100) * duration
+  
+  useEffect(() => {
+    if (seeking) return
+    setValue((time / duration) * 100)
+  }, [time, duration])
+  return (
+    <TimeSlider.Root className='group absolute bottom-0 inline-flex flex-col gap-y-4 h-20 w-full cursor-pointer touch-none select-none items-center outline-none aria-hidden:hidden'>
+      <Time
+        className='time text-slate-100 font-metropolis bg-neutral-950/60 px-4 py-3 rounded-2xl'
+        type='current'
+      />
+
+      <TimeSlider.Track className='relative ring-sky-400 z-0 h-[5px] w-full rounded-sm bg-white/30 group-data-[focus]:ring-[3px]'>
+        <TimeSlider.TrackFill className='bg-indigo-400 absolute h-full w-[var(--slider-fill)] rounded-sm will-change-[width]' />
+        <TimeSlider.Progress className='absolute z-10 h-full w-[var(--slider-progress)] rounded-sm bg-white/50 will-change-[width]' />
+      </TimeSlider.Track>
+      <TimeSlider.Thumb className='absolute left-[var(--slider-fill)] bottom-0 z-20 h-[15px] w-[15px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#cacaca] bg-white opacity-0 ring-white/40 transition-opacity group-data-[active]:opacity-100 group-data-[dragging]:ring-4 will-change-[left]' />
+    </TimeSlider.Root>
   )
 }
 
@@ -562,7 +621,7 @@ function CustomSlider() {
   return (
     <Slider.Root
       // className='group relative inline-flex h-9 w-full cursor-pointer touch-none select-none items-center outline-none'
-      className='group relative inline-flex h-9 w-full cursor-pointer touch-none select-none items-center outline-none'
+      className='absolute z-50 bottom-0 inline-flex h-9 w-full px-4 cursor-pointer items-center outline-none'
       value={[value]}
       disabled={!canSeek}
       step={Number.isFinite(step) ? step : 1}
@@ -576,7 +635,7 @@ function CustomSlider() {
       }}
     >
       <Slider.Track className='h-1 w-full rounded-sm bg-slate-200/30 relative'>
-        <Slider.Range className='bg-neutral-300 mix-blend-multiply absolute h-full rounded-sm will-change-[width]' />
+        <Slider.TrackFill className='bg-neutral-300 mix-blend-multiply absolute h-full rounded-sm will-change-[width]' />
       </Slider.Track>
 
       <Slider.Thumb
