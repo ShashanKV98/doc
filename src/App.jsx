@@ -519,7 +519,7 @@ const Video = ({ setLoaded }) => {
     <MediaPlayer
       src={{
         // src: `/doc/demo.mp4`,
-        src: `/demo.mp4`,
+        src: `https://pub-6674e7c1ea924872877792fbc38b7447.r2.dev/demo.mp4`,
         type: 'video/mp4',
       }}
       onLoadedData={() => setLoaded(true)}
